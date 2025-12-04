@@ -1,5 +1,7 @@
 import sys
 
+IN = sys.stdin.read()
+
 
 def find_best(numbers: list[int], digits: int) -> int:
     if digits <= 0:
@@ -14,9 +16,8 @@ def find_best(numbers: list[int], digits: int) -> int:
 
 
 def solve(digits: int) -> int:
-    IN = sys.stdin.read()
     return sum(find_best([int(c) for c in line.strip()], digits) for line in IN.splitlines())
 
 
-if __name__ == "__main__":
-    print(solve(12))
+print(solve(2))
+print(solve(12))
